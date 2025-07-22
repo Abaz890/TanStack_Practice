@@ -45,9 +45,15 @@ const Home = () => {
                 </Link>
               </Button>
               <Button variant="outline" size="lg">
-                {/* Changed the 'to' prop to a non-existent path */}
-                <Link to="*" className="flex items-center gap-2">
+                {/* This link will also go to the 404 page */}
+                <Link to="/non-existent-blog-page" className="flex items-center gap-2">
                   Read Blog (Test 404)
+                </Link>
+              </Button>
+              {/* New button to test 404 redirection */}
+              <Button variant="outline" size="lg">
+                <Link to="/useless-link" className="flex items-center gap-2">
+                  Test Random 404
                 </Link>
               </Button>
             </div>
