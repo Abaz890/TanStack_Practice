@@ -34,7 +34,7 @@ const Home = () => {
               Demo Website
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-              Explore the power of modern React routing with TanStack Router. 
+              Explore the power of modern React routing with TanStack Router.
               Type-safe, performant, and feature-rich routing for your applications.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -45,8 +45,9 @@ const Home = () => {
                 </Link>
               </Button>
               <Button variant="outline" size="lg">
-                <Link to="/blog" className="flex items-center gap-2">
-                  Read Blog
+                {/* Changed the 'to' prop to a non-existent path */}
+                <Link to="*" className="flex items-center gap-2">
+                  Read Blog (Test 404)
                 </Link>
               </Button>
             </div>
@@ -65,7 +66,7 @@ const Home = () => {
               Experience the next generation of React routing with unmatched type safety and developer experience.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <Card key={index} className="bg-gradient-card border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-elegant">
@@ -94,7 +95,7 @@ const Home = () => {
               Ready to Experience Modern Routing?
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Navigate through our demo pages to see TanStack Router in action with dynamic routes, 
+              Navigate through our demo pages to see TanStack Router in action with dynamic routes,
               nested layouts, and seamless navigation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

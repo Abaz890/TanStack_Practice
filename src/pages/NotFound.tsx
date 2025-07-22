@@ -1,10 +1,12 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "@tanstack/react-router"; // Import useLocation and Link from TanStack Router
 import { useEffect } from "react";
 
 const NotFound = () => {
+  // Use useLocation from @tanstack/react-router
   const location = useLocation();
 
   useEffect(() => {
+
     console.error(
       "404 Error: User attempted to access non-existent route:",
       location.pathname
@@ -12,13 +14,17 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+      <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700">
+        <h1 className="text-6xl font-extrabold text-red-600 mb-4 animate-bounce">404</h1>
+        <p className="text-2xl text-gray-700 dark:text-gray-300 mb-6">Oops! The page you're looking for was not found.</p>
+        <p className="text-lg text-gray-500 dark:text-gray-400 mb-8">It seems you've ventured into uncharted territory.</p>
+        <Link
+          to="/"
+          className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 ease-in-out transform hover:scale-105"
+        >
+          Return to Home Page
+        </Link>
       </div>
     </div>
   );
